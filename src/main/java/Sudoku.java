@@ -15,7 +15,9 @@ public class Sudoku {
         do {
             Consola.clrscr(); Consola.gotoxy(0, 0);
             System.out.print(tablero);
-            jugada = Input.nextLine("\nJugada --> fila,columna,valor: ");
+            do
+                jugada = Input.nextLine("\nJugada --> fila,columna,valor: ");
+            while (!jugada.matches("^[0-8],\\s*[0-8],\\s*[1-9]$"));
 
             String[] partes = jugada.split(",\\s*");
             int [] numeros = new int[partes.length];
